@@ -9,10 +9,14 @@ function App() {
 
   const { data, error, isLoading } = useWeather(city)
   return (
-    <div>
-      <div className='shadow'>
-        <SearchBar setCity={setCity} />
-        <WeatherCard data={data} isLoading={isLoading} error={error} />
+    <div className='flex items-center justify-center min-h-screen bg-[#ebe4ff]'>
+      <div className={`bg-[#988dbb] text-white p-6 rounded-2xl shadow-lg w-[30rem] md:w-[55rem] transition-all overflow-hidden  ${data ? 'h-[25rem]' : 'h-[8rem]'}`}>
+        <div className='relative'>
+          <SearchBar setCity={setCity} />
+        </div>
+        <div className='mt-6'>
+          <WeatherCard data={data} isLoading={isLoading} error={error} />
+        </div>
       </div>
     </div>
   )

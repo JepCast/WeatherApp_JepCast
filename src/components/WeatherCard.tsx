@@ -6,7 +6,7 @@ function WeatherCard({ data, error, isLoading }: WeatherCardPorps) {
   if (!data) return
 
   return (
-    <main className="weather-card">
+    <main className="flex gap-30">
 
       <header className="card-header">
         <div className="location">
