@@ -21,7 +21,6 @@ function SearchBar({ setCity }: SearchBarProps) {
                 onSubmit={handleSubmit}
                 className="relative flex items-center w-full max-w-md bg-transparent rounded-2xl px-4 py-2 backdrop-blur-sm mb-1 transition focus-within:ring-2 focus-within:ring-gray-300 after:content-[''] after:absolute after:items-center after:bottom-0 after:w-[95%] after:h-[2px] after:bg-gray-300 after:rounded-full focus-within:after:bg-transparent ease-initial duration-100"
             >
-                <div className="mb-1">
                     <input
                         type="search"
                         name="city_searchbar"
@@ -38,9 +37,8 @@ function SearchBar({ setCity }: SearchBarProps) {
                         disabled={!inputValue}
                         className="absolute cursor-pointer right-3 text-gray-400 text-xl disabled:opacity-30 transition"
                     >
-                        <IoSearch className="text-white bg-[#bfacf7] rounded-2xl p-1 text-3xl" />
+                        <IoSearch className="text-white bg-[#bfacf7] rounded-2xl p-1 text-2xl" />
                     </button>
-                </div>
             </form>
 
             {/* Logo */}

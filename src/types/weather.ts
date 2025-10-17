@@ -25,6 +25,7 @@ interface WeatherData {
     all: number
   };
   name: string;
+  timezone: number;
 }
 
 interface WeatherCardPorps {
@@ -33,11 +34,15 @@ interface WeatherCardPorps {
   error: string | null
 }
 
-
 interface UseWeatherReturn {
-    data: WeatherData | null;
-    error: string | null
-    isLoading: boolean;
+  data: WeatherData | null;
+  error: string | null
+  isLoading: boolean;
 }
 
-export type {WeatherData, WeatherCardPorps, UseWeatherReturn}
+interface useGetTymeByTimeZoneReturn {
+  time: string;
+  dateText: string;
+}
+
+export type { WeatherData, WeatherCardPorps, UseWeatherReturn, useGetTymeByTimeZoneReturn }
