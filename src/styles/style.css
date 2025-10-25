@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+@import "tailwindcss";
+@import "tailwindcss/utilities";
+
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+:root {
+  --radius: 0.5rem;
+  --transition: 0.2s ease;
+  --bounce-animation: bounce-smooth 3s ease-in-out infinite;
+  --spin-animation: spin-smooth 30s linear infinite;
+}
+
+@font-face {
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("https://fonts.googleapis.com/css2?family=Nunito:wght@200..700&display=swap");
+}
+
+@font-face {
+  font-family: "Comfortaa", sans-serif;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@200..700&display=swap");
+}
+
+@font-face {
+  font-family: "National Park", sans-serif;
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap");
+}
+
+@font-face {
+  font-family: "Dosis", sans-serif;
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap");
+}
+
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes bounce-smooth {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes spin-smooth {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@theme {
+  --font-comfortaa: "Comfortaa", sans-serif;
+  --font-nunito: "Nunito", sans-serif;
+  --font-national-park: "National Park", sans-serif;
+  --font-dosis: "Dosis", sans-serif;
+  --animate-fade-in-up: fadeInUp 0.8s ease-out;
+}
