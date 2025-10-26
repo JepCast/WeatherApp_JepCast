@@ -18,6 +18,10 @@ input[type="search"]::-webkit-search-results-decoration {
   --transition: 0.2s ease;
   --bounce-animation: bounce-smooth 3s ease-in-out infinite;
   --spin-animation: spin-smooth 30s linear infinite;
+  --fadeInDown-animation: fadeInDown .4s ease-out;
+  --fadeOutDown-animation: fadeOutDown .4s ease-out;
+  --fadeInDownRight-animation: fadeInDownRight .4s ease-out;
+  --spin-loading-animation: spin-smooth 1s linear infinite;
 }
 
 @font-face {
@@ -52,7 +56,6 @@ input[type="search"]::-webkit-search-results-decoration {
   src: url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap");
 }
 
-
 @layer base {
   * {
     @apply box-border;
@@ -68,15 +71,39 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
-@keyframes fadeInUp {
+@keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: scale(0.8) translateY(20px);
+    transform: scale(0.8) translateY(-20px);
   }
 
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
+  }
+}
+@keyframes fadeInDownRight {
+  from {
+    opacity: 0;
+    transform: translateY(-40px) translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
   }
 }
 
@@ -103,5 +130,4 @@ input[type="search"]::-webkit-search-results-decoration {
   --font-nunito: "Nunito", sans-serif;
   --font-national-park: "National Park", sans-serif;
   --font-dosis: "Dosis", sans-serif;
-  --animate-fade-in-up: fadeInUp 0.8s ease-out;
 }

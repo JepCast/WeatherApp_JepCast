@@ -18,7 +18,7 @@ export const useWeather = (city: string): UseWeatherReturn => {
                 setIsLoading(true);
                 setError(null);
                 const currentRes = await fetch(`${baseURL}weather?q=${city}&appid=${apiKey}&units=metric`)
-                const forecastRes = await fetch(`${forecastBaseUrl}?key=${forecastApiKey}&q=${city}`);
+                const forecastRes = await fetch(`${forecastBaseUrl}?key=${forecastApiKey}&q=${city}&days=7`);
                 if (!currentRes.ok && !forecastRes.ok) throw new Error('City was not found')
                 const currentData = await currentRes.json();
                 const forecastData = await forecastRes.json();
