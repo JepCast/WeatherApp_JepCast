@@ -11,7 +11,7 @@ function App() {
   return (
     <div className='font-national-park flex flex-col items-center justify-center min-h-screen bg-[#ebe4ff]'>
       <div className='flex-grow flex items-center justify-center'>
-        <div className={`bg-[#988dbb] text-white p-6 rounded-2xl shadow-lg w-[30rem] md:w-[53rem] transition-all overflow-hidden  ${data ? 'h-[39rem]' : 'h-[8rem]'}`}>
+        <div className={`bg-[#988dbb] text-white p-6 rounded-2xl shadow-lg w-[30rem] md:w-[53rem] transition-all overflow-hidden  ${data ? 'h-[37rem]' : 'h-[8rem]'}`}>
           <div className='relative'>
             <SearchBar setCity={setCity} />
           </div>
