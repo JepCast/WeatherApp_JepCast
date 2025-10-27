@@ -1,3 +1,5 @@
+import type { CSSProperties, ElementType } from "react";
+
 interface WeatherData {
   weather: {
     id: number;
@@ -28,6 +30,15 @@ interface WeatherData {
   timezone: number;
   forecast: {
     forecastday: {
+      date: string;
+      day: {
+        avgtemp_c: number;
+        maxtemp_c: number;
+        mintemp_c: number;
+        condition: {
+          text: string;
+        }
+      }
       hour: {
         time: string;
         temp_c: number;
@@ -72,22 +83,22 @@ interface ForecastDay {
     avgtemp_c: number;
     condition: {
       text: string;
-      icon: string;
     };
   };
-  hour: {
-    time: string;
-    temp_c: number;
-    condition: {
-      text: string;
-      icon: string;
-    };
-  }[];
 }
 
+interface Forecast {
+  forecastday: ForecastDay[];
+}
 
 interface ForecastWeekProps {
-  forecastDays: ForecastDay[]; // data.forecast.forecastday
+  forecast: Forecast;
 }
 
-export type { WeatherData, WeatherCardPorps, UseWeatherReturn, useGetTymeByTimeZoneReturn, ForecastHourProp, ForecastWeekProps }
+interface WeatherGraphic {
+  graphicElement: ElementType;
+  style: CSSProperties;
+  bg_color?: string;
+}
+
+export type { WeatherData, WeatherCardPorps, UseWeatherReturn, useGetTymeByTimeZoneReturn, ForecastHourProp,ForecastDay, Forecast,  ForecastWeekProps, WeatherGraphic }

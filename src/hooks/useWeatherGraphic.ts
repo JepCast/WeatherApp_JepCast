@@ -1,13 +1,8 @@
 import { IoPartlySunnyOutline } from "react-icons/io5";
 import { LuCloudSunRain } from "react-icons/lu";
 import { BsCloudRain, BsClouds, BsCloudSnow, BsSun } from "react-icons/bs";
-import type { CSSProperties, ElementType } from "react";
+import type { WeatherGraphic } from "../types/weather";
 
-interface WeatherGraphic {
-    graphicElement: ElementType;
-    style: CSSProperties;
-    bg_color?: string;
-}
 
 export const useWeatherGraphic = (condition: string | null): WeatherGraphic => {
     switch (condition) {
@@ -15,7 +10,7 @@ export const useWeatherGraphic = (condition: string | null): WeatherGraphic => {
             return {
                 graphicElement: BsSun,
                 style: {
-                    animation: "var(--spin-animation)"
+                    animation: "var(--spin-animation), var(--fadeInDownRight-animation)"
                 }
             };
 
@@ -23,7 +18,7 @@ export const useWeatherGraphic = (condition: string | null): WeatherGraphic => {
             return {
                 graphicElement: BsClouds,
                 style: {
-                    animation: "var(--bounce-animation)"
+                    animation: "var(--bounce-animation), var(--fadeInDownRight-animation)"
                 }
             };
 
@@ -31,7 +26,7 @@ export const useWeatherGraphic = (condition: string | null): WeatherGraphic => {
             return {
                 graphicElement: BsCloudRain,
                 style: {
-                    animation: "var(--bounce-animation)"
+                    animation: "var(--bounce-animation), var(--fadeInDownRight-animation)"
                 }
             };
 
@@ -39,7 +34,7 @@ export const useWeatherGraphic = (condition: string | null): WeatherGraphic => {
             return {
                 graphicElement: BsCloudSnow,
                 style: {
-                    animation: "var(--bounce-animation)"
+                    animation: "var(--bounce-animation), var(--fadeInDownRight-animation)"
                 }
             };
 
@@ -47,7 +42,7 @@ export const useWeatherGraphic = (condition: string | null): WeatherGraphic => {
             return {
                 graphicElement: IoPartlySunnyOutline,
                 style: {
-                    animation: "var(--bounce-animation)"
+                    animation: "var(--bounce-animation), var(--fadeInDownRight-animation)"
                 }
             };
 
@@ -55,7 +50,7 @@ export const useWeatherGraphic = (condition: string | null): WeatherGraphic => {
             return {
                 graphicElement: LuCloudSunRain,
                 style: {
-                    animation: "var(--bounce-animation)"
+                    animation: "var(--bounce-animation), var(--fadeInDownRight-animation)"
                 }
             };
 
@@ -63,7 +58,7 @@ export const useWeatherGraphic = (condition: string | null): WeatherGraphic => {
             return {
                 graphicElement: BsSun,
                 style: {
-                    animation: "var(--spin-animation)"
+                    animation: "var(--spin-animation), var(--fadeInDownRight-animation)"
                 }
             };
     }
